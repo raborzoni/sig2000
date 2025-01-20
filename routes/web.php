@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Jobs\ProcessPodcast;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SaleController;
+use App\Http\Controllers\ItemController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,6 +15,9 @@ Route::get('/test-queue', function () {
     return 'Job despachado para a fila!';
 });
 
-Route::apiResource('products', ProductController::class);
+//CRUD básico
+Route::apiResource('items', ItemController::class);
 
-Route::post('sales', [SaleController::class, 'store']);
+// Route::apiResource('products', ProductController::class);
+
+// Route::post('sales', [SaleController::class, 'store']);
